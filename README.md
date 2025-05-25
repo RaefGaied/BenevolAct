@@ -76,12 +76,45 @@ Password : [vide par défaut]
 <property name="javax.persistence.jdbc.user" value="root"/>
 <property name="javax.persistence.jdbc.password" value=""/>
 ```
-📐 Modèle de données
-Entités principales
-Entité	Attributs	Relations
-User	id, nom, email, motDePasse, date	ManyToMany → Activite
-Activite	id, titre, description, date, lieu	ManyToMany → User
-Organisateur	id, nom, email, telephone	OneToMany → Activite
+## 📐 Modèle de données
+
+### Entités principales
+
+| Entité        | Attributs                          | Relations               |
+|---------------|------------------------------------|-------------------------|
+| **User**      | `id`, `nom`, `email`, `motDePasse`, `dateInscription` | ManyToMany → Activite   |
+| **Activite**  | `id`, `titre`, `description`, `date`, `lieu` | ManyToMany → User<br>ManyToOne → Organisateur |
+| **Organisateur** | `id`, `nom`, `email`, `telephone` | OneToMany → Activite    |
+
+### Schéma relationnel
+
+```mermaid
+erDiagram
+    USER {
+        int id PK
+        string nom
+        string email
+        string motDePasse
+        date dateInscription
+    }
+    
+    ACTIVITE {
+        int id PK
+        string titre
+        string description
+        date date
+        string lieu
+    }
+    
+    ORGANISATEUR {
+        int id PK
+        string nom
+        string email
+        string telephone
+    }
+    
+    USER ||--o{ ACTIVITE : "participe"
+    ORGANISATEUR ||--o{ ACTIVITE : "organise"
 
 
 🚀 Comment exécuter le projet
