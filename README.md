@@ -29,30 +29,37 @@ Solution de gestion d'activités associatives permettant :
 ---
 
 ## ✨ Fonctionnalités  
-**Espace Bénévole** :  
-- 📅 Voir les activités disponibles  
-- ➕ S'inscrire à des événements  
-- 📊 Consulter son historique  
+### Espace Bénévole  
+- 📅 Consultation des activités disponibles  
+- ➕ Inscription aux événements  
+- 📊 Historique des participations  
 
-**Espace Organisateur** :  
-- 🆕 Créer de nouvelles activités  
-- 👥 Gérer les participants  
-- 📝 Modifier les informations  
+### Espace Organisateur  
+- 🆕 Création d'activités  
+- 👥 Gestion des participants  
+- ✏️ Modification des informations  
 
 ---
 
-## 🧱 Technologies utilisées  
+## 🛠️ Technologies utilisées  
 ### Backend  
-- **Java EE 8** (Servlets, JSP, JSTL)  
-- **JPA/Hibernate** (ORM)  
-- **Apache Tomcat 9** (Serveur)  
+<p align="left">
+  <img src="https://img.shields.io/badge/Java%20EE-8-ED8B00?logo=java&logoColor=white" alt="Java EE">
+  <img src="https://img.shields.io/badge/JPA-2.2-59666C?logo=hibernate&logoColor=white" alt="JPA">
+  <img src="https://img.shields.io/badge/Tomcat-9.0-F8DC75?logo=apache-tomcat&logoColor=black" alt="Tomcat">
+</p>
 
 ### Frontend  
-- **HTML5/CSS3**  
-- **Bootstrap 5** (Optionnel)  
+<p align="left">
+  <img src="https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white" alt="HTML5">
+  <img src="https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white" alt="CSS3">
+  <img src="https://img.shields.io/badge/Bootstrap-5-7952B3?logo=bootstrap&logoColor=white" alt="Bootstrap">
+</p>
 
 ### Base de données  
-- **MySQL 8.0**  
+<p align="left">
+  <img src="https://img.shields.io/badge/MySQL-8.0-4479A1?logo=mysql&logoColor=white" alt="MySQL">
+</p>
 
 ---
 
@@ -63,60 +70,19 @@ Nom : benevolact
 Port : 3306  
 User : root  
 Password : [vide par défaut]  
-### 🗃️ Base de données
-
-- Nom : `benevolact`
-- Configuration JDBC :
 
 ```xml
 <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/benevolact"/>
 <property name="javax.persistence.jdbc.user" value="root"/>
 <property name="javax.persistence.jdbc.password" value=""/>
 ```
-📐 Entités
-👤 User
-id
+📐 Modèle de données
+Entités principales
+Entité	Attributs	Relations
+User	id, nom, email, motDePasse, date	ManyToMany → Activite
+Activite	id, titre, description, date, lieu	ManyToMany → User
+Organisateur	id, nom, email, telephone	OneToMany → Activite
 
-nom
-
-email
-
-motDePasse
-
-dateInscription
-
-🔗 Relation ManyToMany avec Activite
-
-🎯 Activite
-id
-
-titre
-
-description
-
-date
-
-lieu
-
-🔗 Relation ManyToMany avec User
-
-🔗 Relation ManyToOne avec Organisateur
-
-🧑‍💼 Organisateur
-id
-
-nom
-
-email
-
-telephone
-
-🔗 Relation OneToMany vers Activite
-
-🔄 Relations entre entités
-User ⇄ Activite : ManyToMany
-
-Organisateur → Activite : OneToMany / ManyToOne
 
 🚀 Comment exécuter le projet
 Importer le projet dans Eclipse/NetBeans.
