@@ -1,0 +1,243 @@
+@charset "UTF-8";
+
+/* Styles de base */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    color: white;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding-top: 70px; /* Pour la navbar fixe */
+}
+
+/* Navbar */
+.navbar {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.1);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.navbar .navbar-brand {
+    color: #00e6e6;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.navbar .nav-link {
+    color: #ffffff !important;
+    transition: 0.3s ease-in-out;
+}
+
+.navbar .nav-link:hover {
+    color: #00ffff !important;
+}
+
+/* Contenu principal */
+.content-wrapper {
+    flex: 1;
+    padding: 20px;
+}
+
+/* Carte en verre */
+.card-glass {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 30px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 8px 32px rgba(0, 255, 255, 0.3);
+    animation: fadeIn 1s ease;
+    margin-bottom: 30px;
+}
+
+.card-glass h2 {
+    color: #00ffff;
+    font-size: 26px;
+    font-weight: 600;
+    margin-bottom: 25px;
+}
+
+/* Tableau */
+.table-responsive {
+    border-radius: 15px;
+    overflow: visible !important; /* Correction cruciale */
+}
+
+.table {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    margin-bottom: 0;
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: table !important;
+    width: 100% !important;
+}
+
+.table th {
+    background: rgba(0, 255, 255, 0.2);
+    color: #00ffff;
+    border-bottom: none;
+}
+
+.table td, .table th {
+    padding: 15px;
+    vertical-align: middle;
+    border-color: rgba(255, 255, 255, 0.1);
+    display: table-cell !important;
+}
+
+.table-hover tbody tr {
+    display: table-row !important;
+    transition: all 0.3s ease;
+}
+
+.table-hover tbody tr:hover {
+    background-color: rgba(0, 255, 255, 0.1);
+    transform: translateX(5px);
+}
+
+/* Boutons */
+.btn-neon {
+    border: none;
+    padding: 8px 15px;
+    border-radius: 8px;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(90deg, #00ffff, #00e6e6);
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.6);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-neon:hover {
+    background: linear-gradient(90deg, #00e6e6, #00ffff);
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.9);
+    color: white;
+    transform: translateY(-2px);
+}
+
+.btn-red {
+    background: linear-gradient(90deg, #ff4d4d, #ff0000);
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.6);
+}
+
+.btn-red:hover {
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.9);
+}
+
+.btn-add {
+    background: linear-gradient(90deg, #00ff88, #00e676);
+    box-shadow: 0 0 10px rgba(0, 255, 136, 0.6);
+}
+
+.btn-add:hover {
+    background: linear-gradient(90deg, #00e676, #00ff88);
+    box-shadow: 0 0 20px rgba(0, 255, 136, 0.9);
+}
+
+/* Badges */
+.badge {
+    font-weight: 500;
+    padding: 5px 10px;
+    border-radius: 10px;
+}
+
+.badge-primary {
+    background: rgba(0, 255, 255, 0.2);
+    color: #00ffff;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Messages vides */
+.empty-message {
+    text-align: center;
+    padding: 30px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Formulaire */
+.form-container {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.form-container.show {
+    max-height: 500px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.form-title {
+    color: #00ffff;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+/* Icônes */
+.rotate-icon {
+    transition: transform 0.3s ease;
+}
+
+.rotate-icon.rotated {
+    transform: rotate(45deg);
+}
+
+/* Alertes */
+.alert {
+    border: none;
+    backdrop-filter: blur(5px);
+}
+
+.alert-success {
+    background: rgba(0, 200, 83, 0.2);
+    color: #00e676;
+}
+
+.alert-danger {
+    background: rgba(255, 23, 68, 0.2);
+    color: #ff1744;
+}
+
+/* Correction spécifique pour les lignes du tableau */
+.activity-row {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+/* Pour les petits écrans */
+@media (max-width: 768px) {
+    .card-glass {
+        padding: 15px;
+    }
+    
+    .table td, .table th {
+        padding: 8px;
+    }
+    
+    .btn-neon {
+        padding: 6px 12px;
+        font-size: 0.9rem;
+    }
+}
