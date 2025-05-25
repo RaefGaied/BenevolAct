@@ -35,7 +35,7 @@ Ce projet propose une solution pour gérer les activités proposées par une ass
 <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/benevolact"/>
 <property name="javax.persistence.jdbc.user" value="root"/>
 <property name="javax.persistence.jdbc.password" value=""/>
-
+```
 📐 Entités
 👤 User
 id
