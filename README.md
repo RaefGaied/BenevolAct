@@ -1,31 +1,68 @@
-# 🌱 BénévolAct - Plateforme de gestion d’activités bénévoles
+# 🌱 BénévolAct - Plateforme de gestion d'activités bénévoles  
 
-## 💡 Contexte
+[![Java](https://img.shields.io/badge/Java-EE%208+-orange?logo=java)](https://java.com)
+[![MySQL](https://img.shields.io/badge/MySQL-8.0-blue?logo=mysql)](https://mysql.com)
+[![License](https://img.shields.io/badge/License-MIT-green)](https://opensource.org/licenses/MIT)
 
-Ce projet propose une solution pour gérer les activités proposées par une association bénévole (ramassage de déchets, visites en maison de retraite, soutien scolaire...). Il permet aux utilisateurs de :
-
-- S'inscrire à des activités
-- Suivre leur participation
-- Gagner des badges symboliques selon leur engagement
-
-## ✅ Pourquoi ce projet ?
-
-- 👥 Valorise les actions sociales et solidaires
-- 🔗 Contient plusieurs entités avec relations complexes
-- 📚 Parfait pour pratiquer les technologies JEE (JSP, Servlet, JPA)
-- 💼 Présentable dans un portfolio professionnel
+## 📖 Table des matières  
+- [Contexte](#-contexte)  
+- [Fonctionnalités](#-fonctionnalités)  
+- [Technologies](#-technologies-utilisées)  
+- [Base de données](#-base-de-données)  
+- [Modèle de données](#-modèle-de-données)  
+- [Installation](#-installation)  
+- [Auteur](#-auteur)  
 
 ---
 
-## 🧱 Structure du projet
+## 💡 Contexte  
+Solution de gestion d'activités associatives permettant :  
+- ✅ Inscription à des actions bénévoles  
+- 📊 Suivi des participations  
+- 🏆 Attribution de badges selon l'engagement  
 
-### ⚙️ Technologies utilisées
+**Valeur ajoutée** :  
+- 👥 Valorisation des actions sociales  
+- 🔗 Modèle relationnel complexe (bon exercice JEE)  
+- 💼 Projet présentable en portfolio  
 
-- Java EE (Servlets, JSP, JSTL)
-- JPA (Java Persistence API)
-- MySQL
-- Bootstrap (optionnel pour le style)
+---
 
+## ✨ Fonctionnalités  
+**Espace Bénévole** :  
+- 📅 Voir les activités disponibles  
+- ➕ S'inscrire à des événements  
+- 📊 Consulter son historique  
+
+**Espace Organisateur** :  
+- 🆕 Créer de nouvelles activités  
+- 👥 Gérer les participants  
+- 📝 Modifier les informations  
+
+---
+
+## 🧱 Technologies utilisées  
+### Backend  
+- **Java EE 8** (Servlets, JSP, JSTL)  
+- **JPA/Hibernate** (ORM)  
+- **Apache Tomcat 9** (Serveur)  
+
+### Frontend  
+- **HTML5/CSS3**  
+- **Bootstrap 5** (Optionnel)  
+
+### Base de données  
+- **MySQL 8.0**  
+
+---
+
+## 🗃️ Base de données  
+**Configuration** :  
+```properties
+Nom : benevolact  
+Port : 3306  
+User : root  
+Password : [vide par défaut]  
 ### 🗃️ Base de données
 
 - Nom : `benevolact`
