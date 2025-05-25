@@ -78,36 +78,15 @@ Password : [vide par défaut]
 | **Activite**  | `id`, `titre`, `description`, `date`, `lieu` | ManyToMany → User<br>ManyToOne → Organisateur |
 | **Organisateur** | `id`, `nom`, `email`, `telephone` | OneToMany → Activite    |
 
-### Schéma relationnel
+# BénévolAct - Plateforme de gestion d'activités bénévoles
 
-```mermaid
-erDiagram
-    USER {
-        int id PK
-        string nom
-        string email
-        string motDePasse
-        date dateInscription
-    }
-    
-    ACTIVITE {
-        int id PK
-        string titre
-        string description
-        date date
-        string lieu
-    }
-    
-    ORGANISATEUR {
-        int id PK
-        string nom
-        string email
-        string telephone
-    }
-    
-    USER ||--o{ ACTIVITE : "participe"
-    ORGANISATEUR ||--o{ ACTIVITE : "organise"
+## 📐 Schéma relationnel
 
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/2d4fef5f-42ce-4489-a612-887292e95534" alt="Diagramme de relations Mermaid" width="700">
+  <br>
+  <em>Diagramme des relations entre entités</em>
+</div>
 
 ## 🚀 Installation
 
@@ -125,34 +104,32 @@ erDiagram
    ```bash
    git clone https://github.com/votre-utilisateur/benevolact.git
    cd benevolact
+   ```
 
+2. **Configurer la base de données** :
+   ```sql
+   CREATE DATABASE benevolact;
+   USE benevolact;
+   ```
 
-Configurer la base de données :
+3. **Configuration JPA** :
+   Modifier `src/main/resources/META-INF/persistence.xml` :
+   ```xml
+   <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/benevolact?useSSL=false"/>
+   <property name="javax.persistence.jdbc.user" value="root"/>
+   <property name="javax.persistence.jdbc.password" value="votre_mot_de_passe"/>
+   ```
 
-Créer la base MySQL :
+4. **Démarrer l'application** :
+   - Importer le projet dans votre IDE
+   - Configurer Tomcat 9+
+   - Lancer le serveur
+   - Accéder à : [http://localhost:8080/benevolact](http://localhost:8080/benevolact)
 
-sql
-CREATE DATABASE benevolact;
-Modifier la configuration JPA (src/main/resources/META-INF/persistence.xml) :
+## 👨‍💻 Auteur
+**Raef Gaied**  
+Étudiant en informatique  
 
-xml
-<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/benevolact?useSSL=false"/>
-<property name="javax.persistence.jdbc.user" value="root"/>
-<property name="javax.persistence.jdbc.password" value="votre_mot_de_passe"/>
-Démarrer l'application :
-
-Importer le projet dans votre IDE
-
-Configurer Tomcat 9+
-
-Lancer le serveur
-
-Accéder à : http://localhost:8080/benevolact
-
-👨‍💻 Auteur
-Raef Gaied
-Étudiant en informatique
-
-Portfolio
-LinkedIn
-Email
+[![Portfolio](https://img.shields.io/badge/🌐-Portfolio-blue)](https://votre-portfolio.com)  
+[![LinkedIn](https://img.shields.io/badge/🔗-LinkedIn-0077B5)](https://linkedin.com/in/votre-profil)  
+[![Email](https://img.shields.io/badge/✉️-Contact-D14836)](mailto:votre.email@domain.com)
